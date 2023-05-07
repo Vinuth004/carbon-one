@@ -77,7 +77,7 @@ newBtn.addEventListener('click', (event) => {
 
 // Function to make the API request to OpenAI
 async function makeOpenAIRequest(deviceName) {
-  const openaiApiKey = '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';
+  const openaiApiKey = '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';
   console.log(deviceName);
 
   // Construct the API request body
