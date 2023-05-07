@@ -82,7 +82,7 @@ newBtn.addEventListener('click', (event) => {
   }, 100);
 });
 
-Function to make the API request to OpenAI
+// Function to make the API request to OpenAI
 async function makeOpenAIRequest(deviceName) {
 const p1 = 'sk-dXyuIwvQuev';
 const p2 = 'Po0C4K4IjT3B';
