@@ -121,8 +121,8 @@ newBtn.addEventListener('click', (event) => {
 async function makeOpenAIRequest(deviceName) {
   try {
     // Retrieve the API key from your PHP endpoint
-    const response = await fetch('apikey.php');
-    const data = await response.json();
+    const APIresponse = await fetch('apikey.php');
+    const data = await APIresponse.json();
     const openaiApiKey = data.apiKey;
 
     console.log(deviceName);
