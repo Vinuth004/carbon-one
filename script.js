@@ -6,17 +6,23 @@ const newBtn = document.querySelector('#new-btn');
 const loadingScreen = document.getElementById("loading-screen");
 const loadingScreenAPI = document.getElementById("api-con");
 
-
+const dailyUsageField = document.getElementById('daily-usage');
 
 const resultDiv = document.querySelector('#carbon-footprint');
 const mainDiv = document.querySelector('#calculation-results');
 
 
 submitBtn.addEventListener('click', (event) => {
-  event.preventDefault(); // prevent the form from submitting
+  event.preventDefault(); // Prevent the form from submitting
 
-  // Get the values of the input fields
-  const deviceName = document.querySelector('select[name="device-name"]').value;
+  const dailyUsageInput = document.getElementById('daily-usage');
+  const dailyUsageValue = dailyUsageInput.value;
+  const isValidDailyUsage = dailyUsageInput.checkValidity() && (dailyUsageValue >= 1 && dailyUsageValue <= 24);
+
+  if (!isValidDailyUsage) {
+    dailyUsageInput.reportValidity();
+  } else {
+    const deviceName = document.querySelector('select[name="device-name"]').value;
   const batteryCap = document.querySelector('input[name="battery-cap"]').value;
   const dailyUsage = document.querySelector('input[name="daily-usage"]').value;
 
@@ -57,7 +63,56 @@ submitBtn.addEventListener('click', (event) => {
     })
     .catch(error => console.error(error));
 
+  }
 });
+
+
+// submitBtn.addEventListener('click', (event) => {
+//   event.preventDefault(); // prevent the form from submitting
+
+//   // Get the values of the input fields
+//   const deviceName = document.querySelector('select[name="device-name"]').value;
+//   const batteryCap = document.querySelector('input[name="battery-cap"]').value;
+//   const dailyUsage = document.querySelector('input[name="daily-usage"]').value;
+
+//   // Show the loading screen
+//   loadingScreen.style.display = "block";
+
+
+//   // Calculate the carbon footprint
+//   const electricityMixFactor = 0.462;
+//   const jsonFileUrl = "data.json";
+  
+//   fetch(jsonFileUrl)
+//     .then(response => response.json())
+//     .then(data => {
+//       const deviceData = data[deviceName];
+
+//       // calculate annual charging cycles
+//       const totalBatteryCapacity = deviceData.batteryCapacity * batteryCap / 100;
+//       const averageDailyUsageTime = dailyUsage;
+//       const annualChargingCycles = totalBatteryCapacity / averageDailyUsageTime * 365;
+
+//       // calculate carbon footprint
+//       const lcdEnergyConsumption = deviceData.lcdEnergyConsumption;
+//       const screenSize = deviceData.screenSize;
+//       const annualUsageTime = dailyUsage * 365;
+//       const carbonFootprint = (totalBatteryCapacity * annualChargingCycles * electricityMixFactor * lcdEnergyConsumption * screenSize * annualUsageTime) / 1000;
+
+//       // Delay hiding the loading screen by 5 seconds
+//       setTimeout(() => {
+//         // Hide the loading screen and show the results
+//         loadingScreen.style.display = "none";
+//         mainDiv.style.display = "flex";
+//         resultDiv.textContent = `Your carbon footprint is ${carbonFootprint.toFixed(2)} kg CO2e per year`;
+//         resultDiv.style.display = "flex";
+//         form.style.display = "none";
+//       }, 1000);
+
+//     })
+//     .catch(error => console.error(error));
+
+// });
 
 const responseDiv = document.getElementById("response");
 const aiResults = document.getElementById("ai-results");
@@ -77,7 +132,7 @@ newBtn.addEventListener('click', (event) => {
 
 // Function to make the API request to OpenAI
 async function makeOpenAIRequest(deviceName) {
-  const openaiApiKey = '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';
+  const openaiApiKey = process.env.OPENAI_API_KEY;
   console.log(deviceName);
 
   // Construct the API request body
@@ -168,6 +223,8 @@ nextBtns.forEach((btn, index) => {
 });
 
 
+
+
 prevBtns.forEach((btn, index) => {
   btn.addEventListener('click', () => {
     formSteps[index + 1].style.display = 'none';
@@ -225,3 +282,11 @@ logo.addEventListener('click', () => {
     window.location.href="index.html"
 });
 
+
+
+
+document.addEventListener("keydown", function(event) {
+  if (event.key === 13) {
+    event.preventDefault();
+  }
+});
