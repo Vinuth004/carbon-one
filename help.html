@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://kit.fontawesome.com/74788c9c38.js" crossorigin="anonymous"></script>
+
+
+</head>
+<body>
+    <section class="about-us" id="about-us">
+         <!-- Navbar -->
+         <nav class="navbar">
+          <h1 class="logo">Let's Save Our Planet!</h1>
+          <input type="checkbox" id="click">
+          <label for="click" class="menubar">
+              <i class="fa fa-bars"></i>
+          </label>
+          <ul  class="nav-links">
+            <li><a href="#about-us" class="about-us-link">About Us</a></li>
+            <li><a href="#" class="cal-sec-link">Calculation</a></li>
+            <li><a href="#" class="help-sec-link">Help</a></li>
+          </ul>
+      </nav>
+    
+      <div class="test">
+        <div class="help-text">
+          To find the battery capacity and daily usage time on your iPhone, follow these simple steps: <br><br>
+  
+          1. Go to "Settings" <br>
+          2. Tap on "Battery" <br>
+          3. Under "Battery Health," you can find the maximum capacity of your battery in percentage. <br>
+          4. To estimate your average daily usage time, go to "Settings," tap on "Battery," and look for "Screen Time." Here you will find the average time you spend using your phone per day. <br><br>
+          If you have trouble finding this information or need additional assistance, feel free to reach out to me at vinuth.marasinghe2004@gmail.com. I am more than happy to help you with any questions you may have. 
+        </div>
+      </div>
+      </section>
+      <script>
+        const aboutUsLink = document.querySelector('.about-us-link');
+        const calcSecLink = document.querySelector('.cal-sec-link');
+        const logo = document.querySelector('.logo');
+        
+        logo.addEventListener('click', () => {
+            window.location.href="index.html"
+        });
+        aboutUsLink.addEventListener('click', () => {
+          window.location.href = 'aboutus.html';
+        });
+        
+        calcSecLink.addEventListener('click', () => {
+          window.location.href = 'calc.html';
+        });
+</script>
+
+</body>
+</html>

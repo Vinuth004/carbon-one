@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://kit.fontawesome.com/74788c9c38.js" crossorigin="anonymous"></script>
+
+
+</head>
+<body>
+    <section class="about-us" id="about-us">
+         <!-- Navbar -->
+         <nav class="navbar">
+          <h1 class="logo">Let's Save Our Planet!</h1>
+          <input type="checkbox" id="click">
+          <label for="click" class="menubar">
+              <i class="fa fa-bars"></i>
+          </label>
+          <ul  class="nav-links">
+            <li><a href="#about-us" class="about-us-link">About Us</a></li>
+            <li><a href="#" class="cal-sec-link">Calculation</a></li>
+            <li><a href="#" class="help-sec-link">Help</a></li>
+          </ul>
+      </nav>
+    
+      <div class="test">
+        <div class="calc-text">  
+          Our calculator uses a formula that takes into account various factors such as battery capacity, annual charging cycles, electricity mix factor, LCD energy consumption, screen size, and annual usage time. The calculation is simple: Carbon footprint = (Battery capacity in watt hours * Annual charging cycles * Electricity mix factor * LCD energy consumption * Screen Size * Annual Usage time) / 1000. <br><br>
+  
+          To get an accurate estimate, we suggest estimating your annual charging cycles by dividing your total battery capacity by the average daily usage time and multiplying it by 365. Similarly, you can estimate your annual usage time by multiplying the average daily usage time by 365. The electricity mix factor of 0.462 is used as a global average for electricity generation. <br><br>
+  
+          It's important to note that our calculation provides an estimate and may not be 100% accurate. However, it can serve as a useful tool to help you make more sustainable choices and reduce your carbon footprint. Together, let's take small steps towards a more sustainable future. 
+        </div>
+      </div>
+      </section>
+      <script>
+        const aboutUsLink = document.querySelector('.about-us-link');
+        const helpSecLink = document.querySelector('.help-sec-link');
+        const logo = document.querySelector('.logo');
+        
+        logo.addEventListener('click', () => {
+            window.location.href="index.html"
+        });
+        
+        aboutUsLink.addEventListener('click', () => {
+        window.location.href = 'aboutus.html';
+        });
+
+        helpSecLink.addEventListener('click', () => {
+        window.location.href = 'help.html';
+
+        });
+      </script>
+
+</body>
+</html>

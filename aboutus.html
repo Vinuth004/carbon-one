@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://kit.fontawesome.com/74788c9c38.js" crossorigin="anonymous"></script>
+
+
+</head>
+<body>
+    <section class="about-us" id="about-us">
+         <!-- Navbar -->
+         <nav class="navbar">
+          <h1 class="logo">Let's Save Our Planet!</h1>
+          <input type="checkbox" id="click">
+          <label for="click" class="menubar">
+              <i class="fa fa-bars"></i>
+          </label>
+          <ul  class="nav-links">
+            <li><a href="#about-us" class="about-us-link">About Us</a></li>
+            <li><a href="#" class="cal-sec-link">Calculation</a></li>
+            <li><a href="#" class="help-sec-link">Help</a></li>
+          </ul>
+      </nav>
+    
+                   <div class="test">
+     <div class="about-us-text">
+                I'm Vinuth, the developer of this platform. I believe that every single one of us can make a difference when it comes to preserving the environment. That's why I created this platform to help raise awareness about the impact of our daily actions on the planet and provide resources to help reduce our carbon footprint.  
+          
+                As a child, I spent countless hours exploring the great outdoors and immersing myself in nature. This love for the environment grew with me, and I knew I wanted to make a positive impact on the world in my own way. So, I decided to combine my passion for technology with my love for nature to create Let's Save Our Planet!  <br><br>
+                
+                My goal with this platform is to create a community of individuals who are committed to making a difference. Whether you're a student, a working professional, or a retiree, there are small steps you can take every day to reduce your impact on the environment. Together, we can create a better future for ourselves and for generations to come. <br><br>
+                      
+                So, join me on this journey to save our planet. Let's work together to create a more sustainable future for ourselves and for future generations. Thank you for your support, and please don't hesitate to reach out if you have any questions or suggestions for how we can improve Let's Save Our Planet!  <br> 
+</div>
+
+        </div>
+      </section>
+      <script>
+        const calcSecLink = document.querySelector('.cal-sec-link');
+        const helpSecLink = document.querySelector('.help-sec-link');
+        const logo = document.querySelector('.logo');
+        
+        logo.addEventListener('click', () => {
+            window.location.href="index.html"
+        });
+
+        calcSecLink.addEventListener('click', () => {
+          window.location.href = 'calc.html';
+        });
+        
+        helpSecLink.addEventListener('click', () => {
+          window.location.href = 'help.html';
+        });</script>
+
+</body>
+</html>

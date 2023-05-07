@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Reduce Your Carbon Footprint</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://kit.fontawesome.com/74788c9c38.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+      
+
+  <Section class="first-sec">
+
+    <nav class="navbar">
+      <h1 class="logo">Let's Save Our Planet!</h1>
+      <input type="checkbox" id="click">
+      <label for="click" class="menubar">
+          <i class="fa fa-bars"></i>
+      </label>
+      <ul  class="nav-links">
+        <li><a href="#about-us" class="about-us-link">About Us</a></li>
+        <li><a href="#" class="cal-sec-link">Calculation</a></li>
+        <li><a href="#" class="help-sec-link">Help</a></li>
+      </ul>
+  </nav>
+
+    
+    
+    
+
+    <!-- Registration Form -->
+    <form id="registration-form">
+      <!-- User Name Field -->
+      <div class="form-step">
+        <div class="form-group">
+          <input type="text" id="user-name" name="user-name" placeholder="Your Name" autocomplete="off" required>
+        </div>
+        <button type="button" class="next-btn" id="next-btn-1">Next</button>
+      </div>           
+      <!-- Device Name ComboBox -->
+      <div class="form-step" style="display: none;">
+        <div class="form-group">
+          <select id="device-name" name="device-name">
+            <option value="iPhone 6">iPhone 6</option>
+            <option value="iPhone 6 Plus">iPhone 6 Plus</option>
+            <option value="iPhone 6s">iPhone 6s</option>
+            <option value="iPhone 6s Plus">iPhone 6s Plus</option>
+            <option value="iPhone SE (1st generation)">iPhone SE (1st generation)</option>
+            <option value="iPhone 7">iPhone 7</option>
+            <option value="iPhone 7 Plus">iPhone 7 Plus</option>
+            <option value="iPhone 8">iPhone 8</option>
+            <option value="iPhone 8 Plus">iPhone 8 Plus</option>
+            <option value="iPhone X">iPhone X</option>
+            <option value="iPhone XR">iPhone XR</option>
+            <option value="iPhone XS">iPhone XS</option>
+            <option value="iPhone XS Max">iPhone XS Max</option>
+            <option value="iPhone 11">iPhone 11</option>
+            <option value="iPhone 11 Pro">iPhone 11 Pro</option>
+            <option value="iPhone 11 Pro Max">iPhone 11 Pro Max</option>
+            <option value="iPhone SE (2nd generation)">iPhone SE (2nd generation)</option>
+            <option value="iPhone 12 mini">iPhone 12 mini</option>
+            <option value="iPhone 12">iPhone 12</option>
+            <option value="iPhone 12 Pro">iPhone 12 Pro</option>
+            <option value="iPhone 12 Pro Max">iPhone 12 Pro Max</option>
+            <option value="iPhone 13 mini">iPhone 13 mini</option>
+            <option value="iPhone 13">iPhone 13</option>
+            <option value="iPhone 13 Pro">iPhone 13 Pro</option>
+            <option value="iPhone 13 Pro Max">iPhone 13 Pro Max</option>
+          </select>
+        </div>
+        <button type="button" class="next-btn" id="next-btn-2">Next</button>
+        <button type="button" class="prev-btn">Previous</button>
+      </div>
+      <!-- Battery Capacity Field -->
+      <div class="form-step" style="display: none;">
+        <div class="form-group">
+          <input type="number"min="1" max="100" id="battery-cap" name="battery-cap" required placeholder="Iphone Battery Capacity %" autocomplete="off">
+        </div>
+        <button type="button" class="next-btn" id="next-btn-3">Next</button>
+        <button type="button" class="prev-btn">Previous</button>
+      </div>
+      <!-- Daily Usage Field -->
+      <div class="form-step" style="display: none;">
+        <div class="form-group">
+          <input type="number"min="1" max="24" id="daily-usage" name="daily-usage" required placeholder="Enter Your Daily Usage (H)" autocomplete="off">
+        </div>
+        <button type="submit" class="submit-btn" id="submit-btn">Submit</button>
+        <button type="button" class="prev-btn">Previous</button>
+      </div>
+    </form>
+    
+    <!-- Results  -->
+      <!-- Calculation -->
+      <div id="calculation-results" style="display: none;">
+        <div>
+          <div id="carbon-footprint" style="text-align: center;"></div>
+          <button type="button" class="new-btn" id="new-btn">Ask AI</button>
+        </div>
+      </div>
+      <!-- API Guide -->
+      <div style="display: none;" id="ai-results">
+        <div> 
+          <p>Mhmmm.. Let's ASK AI,</p>       
+          <div id="response"></div>
+        <button type="button" class="re-btn" id="re-btn">Done</button>
+        </div>
+      </div>
+
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+      <div class="message">Calculating your carbon footprint...</div>
+    </div>
+    <div id="api-con">
+      <div class="message">Asking AI for a solution...</div>
+    </div>
+
+	<script src="script.js"></script>
+</body>
+</html>
+
+
