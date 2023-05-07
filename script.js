@@ -82,61 +82,21 @@ newBtn.addEventListener('click', (event) => {
   }, 100);
 });
 
-// Function to make the API request to OpenAI
-// async function makeOpenAIRequest(deviceName) {
-// const openaiApiKey = process.env.OPENAI_API_KEY;
-//   console.log(deviceName);
-
-//   // Construct the API request body
-//   const requestBody = {
-//     model: 'text-davinci-003',
-//     prompt: `I have already purchased ${deviceName}, How can I lower the carbon footprint of my ${deviceName}?`,
-//     max_tokens: 300,
-//     n: 1,
-//     stop: '###',
-//   };
-//   console.log(JSON.stringify(requestBody));
-//   try {
-//     // Make the API request using fetch()
-//     const response = await fetch('https://api.openai.com/v1/completions', {
-//       method: 'POST',
-//       headers: {
-//         'Content-Type': 'application/json',
-//         'Authorization': `Bearer ${openaiApiKey}`,
-//       },
-//       body: JSON.stringify(requestBody),
-//     });
-
-//     // Extract the JSON response from the
-//     const jsonResponse = await response.json();
-
-//     // Call a function to display the response to the user
-//     if (document.querySelector('#response')) {
-//       displayResponse(jsonResponse.choices[0].text);
-//     }
-//   } catch (error) {
-//     console.error(error);
-//   }
-// }
+Function to make the API request to OpenAI
 async function makeOpenAIRequest(deviceName) {
+const openaiApiKey = process.env.OPENAI_API_KEY;
+  console.log(deviceName);
+
+  // Construct the API request body
+  const requestBody = {
+    model: 'text-davinci-003',
+    prompt: `I have already purchased ${deviceName}, How can I lower the carbon footprint of my ${deviceName}?`,
+    max_tokens: 300,
+    n: 1,
+    stop: '###',
+  };
+  console.log(JSON.stringify(requestBody));
   try {
-    // Retrieve the API key from your PHP endpoint
-    const APIresponse = await fetch('apikey.php');
-    const data = await APIresponse.json();
-    const openaiApiKey = data.apiKey;
-
-    console.log(deviceName);
-
-    // Construct the API request body
-    const requestBody = {
-      model: 'text-davinci-003',
-      prompt: `I have already purchased ${deviceName}, How can I lower the carbon footprint of my ${deviceName}?`,
-      max_tokens: 300,
-      n: 1,
-      stop: '###',
-    };
-    console.log(JSON.stringify(requestBody));
-
     // Make the API request using fetch()
     const response = await fetch('https://api.openai.com/v1/completions', {
       method: 'POST',
