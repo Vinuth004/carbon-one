@@ -224,3 +224,12 @@ const logo = document.querySelector('.logo');
 logo.addEventListener('click', () => {
     window.location.href="index.html"
 });
+
+
+document.addEventListener('keypress', function (e) {
+            if (e.keyCode === 13 || e.which === 13) {
+                e.preventDefault();
+                return false;
+            }
+            
+        });
